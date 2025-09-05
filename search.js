@@ -1,0 +1,1 @@
+console.log('search.js placeholder (можно взять из v2)');

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KinoFap — Каталог</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="./index.html">KinoFap</a>
+    <nav class="nav-actions">
+      <button id="openSearchBtn" class="icon-btn" title="Поиск (Ctrl+K)">
+        <svg class="icon"><use href="./assets/icons.svg#search"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h2>Каталог фильмов</h2>
+    <div id="grid" class="grid"></div>
+    <div id="loading" class="muted" style="text-align:center;margin:20px;">Загрузка…</div>
+  </main>
+
+  <!-- Search modal -->
+  <div id="searchModal" class="modal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeSearchBtn">×</button>
+      <h3>Поиск по названию</h3>
+      <div class="search-line">
+        <svg class="icon sm"><use href="./assets/icons.svg#search"/></svg>
+        <input id="searchInput" class="search-input" type="text" placeholder="Например: Матрица" autocomplete="off"/>
+      </div>
+      <p class="muted" style="margin-top:-6px;margin-bottom:10px;font-size:12px;">Введите название или числовой Kinopoisk ID.</p>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <!-- Film detail modal -->
+  <div id="detailModal" class="modal">
+    <div class="modal-card modal-wide">
+      <button class="modal-close" id="closeDetailBtn">×</button>
+      <div id="detailContent"></div>
+    </div>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+  <script src="./player.js"></script>
+  <script src="./search.js"></script>
+  <script src="./party.js"></script>
+  <script src="./chat.js"></script>
+</body>
+</html>

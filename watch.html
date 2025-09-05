@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KinoFap — Совместный просмотр</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="./index.html">KinoFap</a>
+    <nav class="nav-actions">
+      <button id="openSearchBtn" class="icon-btn" title="Поиск (Ctrl+K)">
+        <svg class="icon"><use href="./assets/icons.svg#search"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="content">
+    <div class="section-head">
+      <h2>Комната</h2>
+    </div>
+
+    <div class="room-card">
+      <div>
+        <label class="label">ID комнаты</label>
+        <div class="row">
+          <input id="roomIdInput" class="kp-input" type="text" placeholder="например: ab12cd" />
+          <button id="createRoomBtn" class="btn">Создать</button>
+          <button id="joinRoomBtn" class="btn ghost">Войти</button>
+        </div>
+        <p id="roomInfo" class="muted"></p>
+      </div>
+
+      <div class="row">
+        <input id="syncIdInput" class="kp-input" type="text" placeholder="ID фильма/сериала (KP)" />
+        <button id="syncPlayBtn" class="btn small">Воспроизвести</button>
+      </div>
+    </div>
+
+    <div class="player-layout">
+      <iframe id="playerIframe" allowfullscreen frameborder="0"></iframe>
+      <aside class="chat-panel">
+        <header class="chat-head">
+          <h4>Чат</h4>
+        </header>
+        <div id="chatMessages" class="chat-messages"></div>
+        <div class="chat-input">
+          <input id="chatInput" type="text" placeholder="Сообщение...">
+          <button id="chatSendBtn" class="btn small">Отправить</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Search modal (shared) -->
+  <div id="searchModal" class="modal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeSearchBtn">×</button>
+      <h3>Поиск по названию</h3>
+      <div class="search-line">
+        <svg class="icon sm"><use href="./assets/icons.svg#search"/></svg>
+        <input id="searchInput" class="search-input" type="text" placeholder="Например: Матрица" autocomplete="off"/>
+      </div>
+      <p class="muted" style="margin-top:-6px;margin-bottom:10px;font-size:12px;">Подсказка: введите числовой Kinopoisk ID (например <code>301</code>) и нажмите Enter — появится пункт «Открыть по ID».</p>
+      <div
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+  <script src="./player.js"></script>
+  <script src="./search.js"></script>
+  <script src="./party.js"></script>
+  <script src="./chat.js"></script>
+</body>
+</html>
